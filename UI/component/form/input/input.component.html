@@ -1,0 +1,25 @@
+<div [ngClass]="{
+    'invalid-form-field': invalid && touched,
+    'valid-form-field': valid && touched
+  }" class="primary-form-field">
+  <ng-content select="[labelInput]"></ng-content>
+
+  <div class="container-input display-flex align-items-center">
+    <input [autocomplete]="
+        type === 'password' ? 'new_password' : type === 'email' ? 'on' : 'off'
+      " (ngModelChange)="onInput($event)" [placeholder]="placeholder" [maxlength]="maxLength" [title]="placeholder"
+      (blur)="onBlur()" [ngModel]="value" [type]="tempType" [name]="id" [id]="id" />
+
+    @if(type === 'password'){
+    <div class="input-suffix" [appTooltip]="(tempType === 'password' ? 'Ver' : 'Ocultar') + ' contraseña'"
+      (click)="togglePassword()">
+      <i class="fa-solid fa-lg cursor-pointer" [ngClass]="iconPassword"></i>
+    </div>
+    }
+  </div>
+  @if(invalid && touched){ @if(defaultLabelError){
+  <label [for]="id">Este campo es obligatorio</label>
+  }@else {
+  <ng-content select="[labelInputError]"></ng-content>
+  } }
+</div>

@@ -1,0 +1,22 @@
+<app-modal [customStylesBody]="{ 'grid-template-rows': '1fr auto' }" size="sm">
+    <div class="content-modal-body">
+      <h1 class="font-headline-large">Notificaciones</h1>
+      
+  
+  <button  class="primary-button"></button>
+    <div class="content-modal-footer">
+      <app-button
+        classes="primary-button bg-danger width-fit-content"
+        (eventButtonClick)="closeModal()"
+      >
+        Cerrar
+      </app-button>
+      <app-button
+        classes="primary-button width-fit-content"
+        (eventButtonClick)="closeModal()"
+      >
+        Guardar
+      </app-button>
+    </div>
+    </div>
+  </app-modal>

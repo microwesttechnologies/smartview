@@ -11,29 +11,27 @@
         }
       },
       "root": "",
-      "sourceRoot": "src",
+      "sourceRoot": "UI",
       "prefix": "app",
       "architect": {
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
             "outputPath": "dist/smartview",
-            "index": "src/index.html",
-            "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
+            "index": "UI/index.html",
+            "browser": "UI/main.ts",
+            "polyfills": ["zone.js"],
             "tsConfig": "tsconfig.app.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
+            "assets": ["UI/favicon.ico", "UI/assets"],
             "styles": [
-              "src/styles.scss"
+              "UI/styles.scss",
+              "node_modules/bootstrap/dist/css/bootstrap.min.css"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
+            "scripts": [
+              "node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"
+            ],
+            "server": "UI/main.server.ts",
             "prerender": true,
             "ssr": {
               "entry": "server.ts"
@@ -84,23 +82,18 @@
         "test": {
           "builder": "@angular-devkit/build-angular:karma",
           "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
+            "polyfills": ["zone.js", "zone.js/testing"],
             "tsConfig": "tsconfig.spec.json",
             "inlineStyleLanguage": "scss",
-            "assets": [
-              "src/favicon.ico",
-              "src/assets"
-            ],
-            "styles": [
-              "src/styles.scss"
-            ],
+            "assets": ["UI/favicon.ico", "UI/assets"],
+            "styles": ["UI/styles.scss"],
             "scripts": []
           }
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "400d5b79-2782-4d67-9312-71f8046dc0c6"
   }
 }

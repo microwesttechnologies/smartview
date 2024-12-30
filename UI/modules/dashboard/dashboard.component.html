@@ -1,0 +1,15 @@
+<div class="container-dashboard-module row" style="overflow: hidden;">
+  <h1 class="text-center">Pantalla de inicio</h1>
+  <div class="container d-flex justify-content-center align-items-center">
+    <div class="row g-3">
+      <div class="col-12 col-md-6 col-lg-4" *ngFor="let item of itemCards">
+        <app-card
+          [imageCard]="item.image"
+          [titleCard]="item.title"
+          [descriptionCard]="item.description"
+          [routeCard]="item.route"
+        ></app-card>
+      </div>
+    </div>
+  </div>
+</div>

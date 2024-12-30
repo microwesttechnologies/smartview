@@ -1,0 +1,9 @@
+<div class="primary-modal-background primary-typography center-all">
+  <div
+    class="content-modal modal-{{ size }}"
+    [ngStyle]="customStylesBody"
+    [@slideEnterAndLeaveTop]
+  >
+    <ng-content></ng-content>
+  </div>
+</div>

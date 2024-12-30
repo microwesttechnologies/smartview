@@ -7,7 +7,8 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:smartview": "node dist/smartview/server/server.mjs"
+    "serve:ssr:management-cams-web": "node dist/management-cams-web/server/server.mjs",
+    "deploy": "ng build --configuration production && ngh --dir=dist/management-cams-web/browser --branch=production"
   },
   "private": true,
   "dependencies": {
@@ -20,15 +21,20 @@
     "@angular/platform-browser-dynamic": "^17.3.0",
     "@angular/platform-server": "^17.3.0",
     "@angular/router": "^17.3.0",
-    "@angular/ssr": "^17.3.9",
+    "@angular/ssr": "^17.3.8",
+    "@fontsource/roboto": "^5.1.1",
+    "angular-cli-ghpages": "^2.0.3",
+    "bootstrap": "^5.3.3",
     "express": "^4.18.2",
+    "roboto-fontface": "^0.10.0",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
+    "typeface-roboto": "^1.1.13",
     "zone.js": "~0.14.3"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^17.3.9",
-    "@angular/cli": "^17.3.9",
+    "@angular-devkit/build-angular": "^17.3.8",
+    "@angular/cli": "^17.3.8",
     "@angular/compiler-cli": "^17.3.0",
     "@types/express": "^4.17.17",
     "@types/jasmine": "~5.1.0",

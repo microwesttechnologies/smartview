@@ -1,0 +1,20 @@
+<div class="container-fluid d-flex flex-column justify-content-center align-items-center min-vh-100" style="overflow: hidden;">
+  <h1 class="text-center">Configuración</h1>
+  <div class="container d-flex justify-content-center align-items-center">
+    <div class="row g-3">
+      <div class="col-12 col-md-6 col-lg-4" *ngFor="let item of itemCards">
+        <app-card
+          [imageCard]="item.image"
+          [titleCard]="item.title"
+          [descriptionCard]="item.description"
+          [routeCard]="item.route"
+          (numberModal)="showmodal($event)"
+        ></app-card>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-persons *ngIf="showFormPersons"></app-persons>
+<app-zones *ngIf="showFormZones"></app-zones>
+<app-notifications *ngIf="showFormNotification"></app-notifications>
